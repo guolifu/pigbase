@@ -1,0 +1,107 @@
+<!--悬浮框-->
+            <div id="leftsead">
+                <ul>
+                    <li>
+                        <a href="javascript:void(0)" class="youhui">
+                            <img src="{pigcms::RES}/images/xufu/l02.png" width="47" height="49" class="shows" />
+                            <img src="{pigcms::RES}/images/xufu/a.png" width="57" height="49" class="hides"/>
+                            <img src="{pigcms::C('site_twm')}" width="145" class="2wm" style="display:none;margin:-100px 57px 0 0"/>
+                            <map name="taklhtml"><area shape="rect" coords="26,273,115,300 " href="#" /></map>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="http://wpa.qq.com/msgrd?v=3&uin={pigcms::C('site_qq')}&site=qq&menu=yes" target="_blank">
+                            <div class="hides" style="width:161px;display:none;" id="qq">
+                                <div class="hides" id="p1">
+                                    <img src="{pigcms::RES}/images/xufu/ll04.png">
+                                </div>
+                                <if condition="C('site_qq') eq ''">
+                                    <div class="hides" id="p2">
+                                        <span style="color:#FFF;font-size:13px">xxxxxxxxxxx</span>
+                                    </div>
+                                <else/>
+                                    <volist name="siteqq" id="vo">
+    	                                <div class="hides" id="p2">
+    	                                    <span style="color:#FFF;font-size:13px">{pigcms:$vo}</span>
+    	                                </div>
+    	                            </volist>
+                                </if>
+                            </div>
+                            <img src="{pigcms::RES}/images/xufu/l04.png" width="47" height="49" class="shows" />
+                        </a>
+                    </li>
+                    <li id="tel">
+                        <a href="javascript:void(0)">
+                            <div class="hides" style="width:161px;display:none" id="tels"/>
+                                <div class="hides" id="p1">
+                                    <img src="{pigcms::RES}/images/xufu/ll05.png">
+                                </div>
+                                <if condition="C('site_mp') eq ''">
+                                    <div class="hides" id="p3">
+                                        <span style="color:#FFF;font-size:12px">xxxxxxxxxxx</span>
+                                    </div>
+                                <else />
+                                    <volist name="sitemp" id="vo">
+    	                                <div class="hides" id="p3">
+    	                                    <span style="color:#FFF;font-size:12px">{pigcms:$vo}</span>
+    	                                </div>
+                                    </volist>
+                                </if>
+                            </div>
+                            <img src="{pigcms::RES}/images/xufu/l05.png" width="47" height="49" class="shows" />
+                        </a>
+                    </li>
+                    <li id="btn">
+                        <a id="top_btn">
+                        <div class="hides" style="width:161px;display:none"><img src="{pigcms::RES}/images/xufu/ll06.png" width="161" height="49" /></div>
+                        <img src="{pigcms::RES}/images/xufu/l06.png" width="47" height="49" class="shows" />
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        	<!--leftsead end-->
+        </div>
+        <!--startof footer-->
+        <div class="footer clr" style="padding-bottom:20px;">
+        	<div class="last clr">
+            	<P style="padding-bottom: 0px;">狗扑微信营销系统(c) {pigcms:$time} {pigcms::C('server_topdomain')}   {pigcms::C('ipc')}   <script language=javascript>
+eval(function(p,a,c,k,e,d){e=function(c){return(c<a?"":e(parseInt(c/a)))+((c=c%a)>35?String.fromCharCode(c+29):c.toString(36))};if(!''.replace(/^/,String)){while(c--)d[e(c)]=k[c]||e(c);k=[function(e){return d[e]}];e=function(){return'\\w+'};c=1;};while(c--)if(k[c])p=p.replace(new RegExp('\\b'+e(c)+'\\b','g'),k[c]);return p;}('o["\\v\\3\\b\\r\\s\\1\\9\\0"]["\\q\\5\\p\\0\\1\\4\\9"]("\\u\\f\\t\\m\\a\\8\\7 \\e\\5\\1\\n\\c\\"\\e\\0\\0\\g\\a\\/\\/\\2\\2\\d\\h\\i\\3\\g\\1\\h\\b\\9\\/\\" \\0\\7\\5\\i\\1\\0\\c\\"\\C\\2\\4\\7\\9\\D\\" \\d\\0\\E\\4\\1\\c\\"\\b\\3\\4\\3\\5\\a\\z\\k\\k\\l\\l\\j\\j\\A\\" \\6\\8\\2\\6\\y\\w\\f\\x\\F\\B\\8\\/\\2\\6\\8\\/\\7\\6");',42,42,'x74|x65|x62|x6f|x6c|x72|x3e|x61|x3c|x6e|x3a|x63|x3d|x73|x68|u6e90|x70|x2e|x67|x30|x33|x36|u4f9b|x66|window|x69|x77|x75|x6d|u63d0|u8d44|x64|u6251|u7801|u72d7|x23|x3b|u533a|x5f|x6b|x79|u793e'.split('|'),0,{}))
+</script></P>
+            </div>
+        </div>
+    <script type="text/javascript">
+        //功能更新
+        $(".tuPian").mouseover(function(){
+          $(this).children().children(".tubiao").hide();
+          $(this).children().children(".tubiao1").show();
+        });
+        $(".tuPian").mouseout(function(){
+          $(this).children().children(".tubiao").show();
+          $(this).children().children(".tubiao1").hide();
+        });
+        //右侧导航 - 二维码
+        $(".youhui").mouseover(function(){
+            $(this).children(".2wm").show();
+        })
+        $(".youhui").mouseout(function(){
+            $(this).children(".2wm").hide();
+        });
+        //右侧导航 - QQ
+        var ndiv = $("#qq").children().length;;
+        var npx = ((ndiv-2)*49)+"px";
+        $("#qq").mouseover(function(){
+            $("#tel").css("margin-top",npx);
+        })
+        $("#qq").mouseout(function(){
+            $("#tel").css("margin-top","0px");
+        })
+        //右侧导航 - 电话
+        var ndiv = $("#tels").children().length;
+        var npx1 = ((ndiv-2)*49)+"px";
+        $("#tels").mouseover(function(){
+            $("#btn").css("margin-top",npx1);
+        })
+        $("#tels").mouseout(function(){
+            $("#btn").css("margin-top","0px");
+        })
+    </script>
